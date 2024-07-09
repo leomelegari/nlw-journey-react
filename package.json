@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prepareMac:android": "npm run remove:wwwi && npm run build && node __script.js && mkdir www && mv dist www && cordova prepare android",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "remove:wwwi": "rm -rf ./www"
   },
   "dependencies": {
     "localforage": "^1.10.0",
@@ -16,7 +18,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
