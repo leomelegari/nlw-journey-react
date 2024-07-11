@@ -6,16 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build-cordova": "vite build && cp -R dist/* cordova/www/",
     "prepareMac:android": "npm run remove:wwwi && npm run build && node __script.js && mkdir www && mv dist www && cordova prepare android",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "remove:wwwi": "rm -rf ./www"
   },
   "dependencies": {
+    "axios": "^1.7.2",
+    "date-fns": "^3.6.0",
     "localforage": "^1.10.0",
     "lucide-react": "^0.404.0",
     "match-sorter": "^6.3.4",
     "react": "^18.3.1",
+    "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
     "sort-by": "^1.2.0",
